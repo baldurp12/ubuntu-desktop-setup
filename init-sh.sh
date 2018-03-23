@@ -1,11 +1,6 @@
 #!bin/bash
 
-
-## GCC WITH LIBC
-
-
-
-## .NET CORE 2.1.4 // TODO: Find a more general way, not version dependant
+## .NET CORE 2.1.4
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
@@ -22,17 +17,24 @@ sudo apt-get install default-jdk
 
 ## GO LANG 1.10
 
-curl https://dl.google.com/go/go1.10.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
+sudo curl https://dl.google.com/go/go1.10.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
 
-export PATH=$PATH:/usr/local/go/bin
+sudo export PATH=$PATH:/usr/local/go/bin
 
-## PYTHON 3.6
+## PYTHON 3.6.3
+
+
+
+## Node.js
+
+
+
+## React
 
 
 
 ## VISUAL STUDIO CODE
-
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
