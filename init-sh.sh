@@ -1,5 +1,7 @@
 #!bin/bash
 
+sudo apt update
+
 ## .NET CORE 2.1.4
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -24,7 +26,7 @@ sudo export PATH=$PATH:/usr/local/go/bin
 
 ## PYTHON 3.6.3
 
-
+sudo apt install python3.6
 
 ## Node.js
 
