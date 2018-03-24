@@ -43,7 +43,9 @@ sudo make altinstall
 
 ## React
 
+## Docker
 
+## SQLite
 
 ## VISUAL STUDIO CODE
 
