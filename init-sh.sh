@@ -23,7 +23,7 @@ sudo apt-get install default-jdk
 sudo wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
 
-sudo export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
 
 ## PYTHON 3.6.3 - with out making 3.6 default (altinstall)
 
