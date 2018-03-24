@@ -1,6 +1,7 @@
 #!bin/bash
 
 sudo apt update
+sudo apt-get update
 
 ## .NET CORE 2.1.4
 
@@ -8,8 +9,8 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
-sudo apt-get update
 
+sudo apt-get update
 sudo apt-get install dotnet-sdk-2.1.4
 
 
@@ -29,6 +30,8 @@ sudo export PATH=$PATH:/usr/local/go/bin
 sudo apt-get install build-essential checkinstall
 sudo apt-get install libreadline-gplv2-dev  libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 
+sudo apt-get update
+
 cd /usr/src
 sudo wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz
 
@@ -37,8 +40,18 @@ sudo ./configure --enable-optimizations
 sudo make altinstall
 
 
-## Node.js
+## Node.js - Including npm
 
+curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+
+VERSION=node_8.10.0
+
+DISTRO="$(lsb_release -s -c)"
+echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+
+sudo apt-get update
+sudo apt-get install nodejs
 
 
 ## React
