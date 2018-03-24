@@ -1,8 +1,5 @@
 #!bin/bash
 
-
-cd /usr/src
-
 sudo apt update
 sudo apt-get update
 
@@ -67,11 +64,17 @@ sudo apt-get install docker-ce
 
 ## SQLite
 
-sudo wget https://sqlite.org/2018/sqlite-autoconf-3220000.tar.gz
-sudo tar -xzf sqlite-autoconf-3220000.tar.gz
 
-sudo CFLAGS="-Os" ./configure; make;
+sudo wget -P /var/tmp https://sqlite.org/2018/sqlite-autoconf-3220000.tar.gz
+sudo tar -C /usr/local -xzf /var/tmp/sqlite-autoconf-3220000.tar.gz 
 
+sudo mv /usr/local/sqlite-autoconf-3220000 /usr/local/sqlite3/
+cd sqlite3
+
+sudo CFLAGS="-Os" ./configure
+sudo make
+
+export PATH=$PATH:/usr/local/sqlite3
 
 ## VISUAL STUDIO CODE
 
