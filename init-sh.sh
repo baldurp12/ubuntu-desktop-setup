@@ -1,7 +1,5 @@
 #!bin/bash
 
-sudo su
-
 sudo apt update
 sudo apt-get update
 
@@ -43,15 +41,16 @@ sudo make altinstall
 
 ## Node.js 8.10.0 - Including npm
 
-curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+#curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 
-VERSION=node_8.10.0
+#VERSION=node_8.10.0
 
-DISTRO="$(lsb_release -s -c)"
-echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+#DISTRO="$(lsb_release -s -c)"
+#echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+#echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
 
-sudo apt-get update
+#sudo apt-get update
+
 sudo apt-get install nodejs
 
 ## Docker - THIS WILL GET THE LATEST VERSION OF DOCKER, NOT SUITABLE FOR PRODUCTION
@@ -80,9 +79,9 @@ export PATH=$PATH:/usr/local/sqlite3
 
 ## VISUAL STUDIO CODE
 
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+#curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+#sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+#sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
 ## Wireshark
 
